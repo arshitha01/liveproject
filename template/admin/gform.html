@@ -1,0 +1,44 @@
+{% extends "admin/headerfooter.html" %}
+{% block content %}
+<!--sidebar start-->
+
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+	<div class="form-w3layouts">
+        <!-- page start-->
+        <!-- page start-->
+        <div class="row">
+            <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Basic Forms
+                        </header>
+                        <div class="panel-body">
+                            <div class="position-center">
+                                <form action="/gform/" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Caption</label>
+                                    <input type="text" class="form-control" name="text2" id="exampleInputPassword1" placeholder="description">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">File input</label>
+                                    <input type="file" name="text1" id="exampleInputFile">
+                                    
+                                </div>
+                                <!-- <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Check me out
+                                    </label>
+                                </div> -->
+                                <button type="submit" class="btn btn-info">Submit</button>
+                            </form>
+                            </div>
+
+                        </div>
+                    </section>
+
+           
+{% endblock %}

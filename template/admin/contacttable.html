@@ -1,0 +1,55 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% extends "admin/headerfooter.html" %}
+{% block content %}
+<!--header end-->
+<!--sidebar start-->
+
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+		<div class="table-agile-info">
+ <div class="panel panel-default">
+    <div class="panel-heading">
+     Basic table
+    </div>
+    <div>
+      <table class="table" ui-jq="footable" ui-options='{
+        "paging": {
+          "enabled": true
+        },
+        "filtering": {
+          "enabled": true
+        },
+        "sorting": {
+          "enabled": true
+        }}'>
+        <thead>
+          <tr>
+            <th data-breakpoints="xs">ID</th>
+            <th>Name</th>
+            <th>Phone number</th>
+            <th data-breakpoints="xs">Messages</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for x in details %}
+          <tr data-expanded="true">
+            <td>{{forloop.counter}}</td>
+            <td>{{x.username}}</td>
+            <td>{{x.userphone}}</td>
+            <td>{{x.usermessage}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+ {% endblock %}

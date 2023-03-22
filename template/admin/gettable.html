@@ -1,0 +1,56 @@
+{% extends "admin/headerfooter.html" %}
+{% block content %}
+<!--header end-->
+<!--sidebar start-->
+
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+		<div class="table-agile-info">
+ <div class="panel panel-default">
+    <div class="panel-heading">
+     Basic table
+    </div>
+    <div>
+      <table class="table" ui-jq="footable" ui-options='{
+        "paging": {
+          "enabled": true
+        },
+        "filtering": {
+          "enabled": true
+        },
+        "sorting": {
+          "enabled": true
+        }}'>
+        <thead>
+          <tr>
+            <th data-breakpoints="xs">ID</th>
+            <th>Service Id</th>
+            <th>User name</th>
+            <th>Email</th>
+            <th>phone</th>
+            <th data-breakpoints="xs">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for x in details %}
+          <tr data-expanded="true">
+            <td>{{forloop.counter}}</td>
+            <td>{{x.sid.servicename}}</td>
+            <td>{{x.username}}</td>
+            <td>{{x.useremail}}</td>
+            <td>{{x.userphone}}</td>
+            <td>{{x.details}}</td>
+           <!-- <td><img style="width: 70%;height: 70%;" src="{{x.image.url}}"></td> -->
+           <!-- <td><a href="/gettableupdate/?sid={{x.id}}"><i class="fa fa-edit"></i></a></td>
+           <td><a href="/gettabledelete/?sid={{x.id}}"><i class="fa fa-trash"></i></a></td> -->
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+ {% endblock %}
