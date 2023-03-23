@@ -239,8 +239,8 @@ def gtableupdate(request):
 					if os.path.exists(pathtoimage):
 						os.remove(pathtoimage)
 						print('successfully deleted')
-		updrec.image=cimage
-		updrec.save()        
+			updrec.image=cimage
+			updrec.save()        
 		add=gallery_tb.objects.filter(id=cid).update(caption=caption)
 		return HttpResponseRedirect('/gtable/')
 	else:
